@@ -1,0 +1,11 @@
+*{
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+.judul {
+  text-align: center;
+  margin-top: 20px;
+}
