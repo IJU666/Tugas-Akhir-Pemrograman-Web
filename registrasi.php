@@ -27,27 +27,29 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1 class="judul">Halaman Registrasi</h1>
-    <a href="Login.php">Login Akun</a>
-
+    <div class="logo">
+        <p>Logo</p>
+    </div>
+    <h1 class="judul">Daftar</h1>
+    <div class="position-form">
     <form action="" method="post">
-        <ul>
-            <li>
-                <label for="user">Nama : </label>
-                <input type="text" name="username" id="user" required>
-            </li>
-            <li>
-                <label for="pw">Password : </label>
-                <input type="password" name="password" id="pw" required>
-            </li>
-            <li>
-                <label for="pw2">Password : </label>
-                <input type="password" name="password2" id="pw2" required>
-            </li>
-            <li>
-                <button type="submit" name="tbl_register">Register</button>
-            </li>
-        </ul>
-    </form>
+        <div class="form-group">
+            <label for="user" class="label-form">Nama Pengguna</label>
+            <input type="text" name="username" id="user" class="form-custom" required>
+        </div>
+        <div class="form-group">
+            <label for="pw" class="label-form">Kata Sandi</label>
+            <input type="password" name="password" class="form-custom" id="pw" required>
+        </div>
+        <div class="form-group">
+            <label for="pw2" class="label-form">Ulangi Kata Sandi</label>
+            <input type="password" name="password2" class="form-custom" id="pw2" required>
+        </div>
+        <div class="button-position">
+            <button type="submit" name="tbl_register" class="regist-button">Daftar Akun</button>
+        </div>
+        </form>
+    </div>
+    <p class="link-page">Sudah mempunyai akun?<a href="Login.php" class="">Masuk</a></p>
 </body>
 </html>
