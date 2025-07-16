@@ -97,7 +97,7 @@
 a {
   text-decoration: none;
 }
-    .container{
+   .container{
         padding: 10px 10px 100px 10px;
     }
 
@@ -105,9 +105,10 @@ a {
     .container-form {
     margin: auto;
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-start;
     justify-content: center;
-    gap: 60px;
+    gap: 5%;
     }
 
     .navbar {
@@ -115,7 +116,7 @@ a {
     }
 
     .form-section {
-    padding-left: 300px;
+    padding-left: 18%;
     padding-bottom: 1rem;
     }
 
@@ -126,6 +127,8 @@ a {
     .box-form {
     padding-left: 60px;
     padding-right: 40px;
+    width: 100%;
+    max-width: 600px;
     }
 
     .img-thumbnail {
