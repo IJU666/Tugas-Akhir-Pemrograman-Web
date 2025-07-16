@@ -113,24 +113,29 @@ function upload(){
 
     function ubah($data){
         global $con;
+
         $id = $data["id"];
         $nama = $data["nama"];
-        $nidn = $data["nidn"];
+        $NIDN = $data["NIDN"];
         $email = $data["email"];
         $prodi = $data["prodi"];
-        $foto = $data["foto"];
+        $fotoLama = $data["fotoLama"];
+        $error = $_FILES['foto']['error'];
 
-        $query = "UPDATE dosen  SET 
-        nama='$nama', 
-        NIDN='$nidn', 
-        email='$email', 
-        prodi='$prodi', 
-        foto='$foto' 
-        WHERE id='$id'";
+        if ($error === 4) {
+            $foto = $fotoLama;
+        } else {
+            $foto = upload();
+            unlink("img/".$fotoLama);
+            if (!$foto) {
+                return false; 
+            }
+        }
+        $query = "UPDATE dosen SET nama = '$nama',NIDN = '$NIDN',email = '$email',prodi = '$prodi',foto = '$foto' WHERE id = $id";
         mysqli_query($con, $query);
 
         return mysqli_affected_rows($con);
-    }
+}
 
     function cari($keyword){
         $query = "SELECT * FROM dosen WHERE nama LIKE '%$keyword%' OR prodi LIKE '%$keyword%' OR nidn LIKE '%$keyword%'"; 

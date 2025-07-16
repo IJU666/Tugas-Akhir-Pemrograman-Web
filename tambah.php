@@ -1,25 +1,6 @@
 <?php
-    include"koneksi.php";
     require"function.php";
-
-    // if (isset($_POST["submit"])) {
-    //     $nama = $_POST["nama"];
-    //     $nidn = $_POST["nidn"];
-    //     $email = $_POST["email"];
-    //     $prodi = $_POST["prodi"];
-    //     $foto = $_POST["foto"];
-
-    //     $query = "INSERT INTO dosen (nama,nidn,email,prodi,foto) VALUES ('$nama', '$nidn', '$email', '$prodi', '$foto')";
-    //     mysqli_query($con, $query);
-
-    //     if (mysqli_affected_rows($con)) {
-    //         echo "Berhasil Input";
-    //     } else {
-    //         echo "Gagal Input"; 
-    //     }
-    // }
-
-
+    
     if (isset($_POST["submit"])) {
         var_dump($_POST);
         var_dump($_FILES);
@@ -37,46 +18,66 @@
         </script>";
         }
     }
+
 ?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
 <body>
-    <h1 style="text-align:center;">Tambah Data Dosen</h1>
-    <form action="" method="post" enctype="multipart/form-data">
-        <ul>
-            <li>
-                <label for="foto"> Foto : </label>
-                <input type="file" name="foto" id="foto">
-            </li>
-            <li>
-                <label for="nidn">NIDN : </label>
-                <input type="number" name="nidn" id="nidn">
-            </li>
-            <li>
-                <label for="nama">Nama : </label>
-                <input type="text" name="nama" id="nama">
-            </li>
-            <li>
-                <label for="email">Email : </label>
-                <input type="text" name="email" id="email">
-            </li>
-            <li>
-                <label for="prodi">Prodi : </label>
-                <input type="text" name="prodi" id="prodi">
-            </li>
-            <!-- <li>
-                <label for="foto">Foto : </label>
-                <input type="text" name="foto" id="foto">
-            </li>
-            <li> -->
-                <button type="submit" name="submit">Tambah Data</button>
-            </li>
-        </ul>
-    </form>
+    <div class="navbar">
+        <h2>LOGO</h2>
+    </div>
+    <div class="container">
+        <div class="form-section">
+            <h3>Tambah Data Dosen</h3>
+            <p>Tambah Data NIDN,dll</p>
+        </div>
+        <form action="" method="post" enctype="multipart/form-data">
+            <div class="container-form">
+                <div class="box-form">
+                    <input type="text" name="id" id="" value="<?= $dsn['id'];?>" hidden>
+                    
+                    
+                    <label for="nidn"><b>NIDN</b></label><br>
+                    <input type="text" name="NIDN" id="NIDN" required ><br><br>
+                    
+                    <label for="nama"><b>Nama</b></label><br>
+                    <input type="text" name="nama" id="nama" required ><br><br>
+                    
+                    <label for="email"><b>Email</b></label><br>
+                    <input type="text" name="email" id="email" required ><br><br>
+            
+                    <label for="prodi"><b>Prodi</b></label><br>
+                    <input type="text" name="prodi" id="prodi" required ><br><br>
+                    
+                    <div class="btn-segment">
+                        <button type="submit" name="submit" class="btn-submit">Tambah Data</button>
+                        <a href="index1.php" class="btn-cancel">Batal</a>
+                    </div>
+    
+                </div>
+    
+    
+                <div class="box-img">
+                    <img src="img/<?= $dsn['foto']; ?>" class="img-thumbnail">
+                    <label class="btn-submit ">
+                    Tambah Foto
+                    <input type="file" name="foto" hidden>
+                </div>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
