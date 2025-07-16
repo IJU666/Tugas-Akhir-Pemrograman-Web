@@ -55,28 +55,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Halaman Login</h1>
-    <a href="registrasi.php">Daftar Akun</a>
+ <div class="logo">
+        <p>Logo</p>
+    </div>
+    <h1 class="judul">Masuk</h1>
+    <div class="position-form">
     <form action="" method="post">
-    <ul>
-        <li>
-            <label for="user">Username </label>
-            <input type="text" name="username" id="user">
-        </li>
-        <li>
-            <label for="pw">password</label>
-            <input type="password" name="password" id="pw">
-        </li>
-        <li>
+        <div class="form-group">
+            <label for="user" class="label-form">Username </label>
+            <input type="text" name="username" id="user" class="form-custom">
+        </div>
+        <div class="form-group">
+            <label for="pw" class="label-form">password</label>
+            <input type="password" name="password" id="pw" class="form-custom">
+        </div>
+        <div class="remember-me">
             <input type="checkbox" name="remember" id="remember">
             <label for="remember">Remember Me</label>
-        </li>
-        <li>
-            <button type="submit" name="login">Login</button>
-        </li>
-    </ul>
+        </div>
+        <div class="button-position">
+            <button type="submit" name="login" class="regist-button">Masuk</button>
+       </div>
     </form>
+    </div>
+    <p class="link-page">Belum mempunyai akun?<a href="registrasi.php">Daftar Akun</a></p>
 </body>
 </html>

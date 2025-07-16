@@ -1,8 +1,8 @@
 *{
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
-  /* font-weight: <weight>; */
-  /* font-style: 24px; */
+  font-weight: <weight>;
+  font-style: normal;
 }
 
 .judul {
@@ -20,7 +20,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    gap: 60px
+    gap: 60px;
     }
 
     .navbar {
@@ -28,7 +28,7 @@
     }
 
     .form-section {
-    padding-left: 25rem;
+    padding-left: 300px;
     padding-bottom: 1rem;
     }
 
@@ -103,7 +103,7 @@
 
 
     .box-img{
-        padding : 40px 100px 20px;
+        padding : 20px 100px 20px;
         display: flex;
         flex-direction: column;
     }
