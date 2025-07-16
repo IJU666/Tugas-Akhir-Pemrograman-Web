@@ -194,3 +194,141 @@ a {
         display: flex;
         flex-direction: column;
     }
+
+      table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+
+  thead {
+    background-color: #f8f9fa;
+  }
+
+  tbody tr:nth-child(odd) {
+    background-color: #f2f2f2; 
+  }
+
+  tbody tr:hover {
+    background-color: #e9ecef; 
+  }
+
+  .table-position {
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+
+  .search-position {
+    flex-direction: row;
+    margin-bottom: 20px;
+  }
+
+  .form-search{
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+.form-position {
+    gap: 26%;
+    display: flex;
+      flex-direction: row;
+  }
+
+.form-position a {  
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.button-logout {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.button-logout:hover {
+  background-color: #c82333;
+}
+
+.logout-position {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.custom-pagination {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.custom-pagination li {
+  display: inline;
+}
+
+.custom-pagination a {
+  display: inline-block;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #007bff;
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.custom-pagination a:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.ubah {
+    color: #fff;
+    background-color: #0d6efd;
+    border: none;
+    border-radius: 0.375rem;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.15s, box-shadow 0.15s;
+}
+
+.ubah:hover,
+.ubah:focus {
+    background-color: #0b5ed7;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.hapus{
+    color: #fff;
+    background-color: #dc3545;
+    border: none;
+    border-radius: 0.375rem;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.15s, box-shadow 0.15s;
+}
+
+.hapus:hover,
+.hapus:focus {
+    background-color: #bb2d3b;
+    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+}
