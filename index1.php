@@ -49,40 +49,43 @@ if (isset($_POST["cari"])) {
   <div class="search-position">
     <div class="form-position">
       <div class="form-search">
-      <input type="text" name="keyword" id="" size="50" placeholder="Masukan Kata Kunci" class="form-custom" autocomplete="off">
-      <button type="submit" name="cari" class="regist-button">Cari</button>
+      <input type="text" name="keyword" id="keyword" size="50" placeholder="Masukan Kata Kunci" class="form-custom" autocomplete="off">
+      <button type="submit" name="cari" id="btn-search" class="regist-button">Cari</button>
       </div>
       <a href="tambah.php" class="regist-button">Tambah data dosen</a>
   </div>
   </form>
-  <table border="1" cellpadding="10" cellspacing="0" >
-    <tr>
-      <th class="table-heading">No.</th>
-      <th class="table-heading">Foto</th>
-      <th class="table-heading">Nama</th>
-      <th class="table-heading">NIDN</th>
-      <th class="table-heading">Email</th>
-      <th class="table-heading">Prodi</th>
-      <th class="table-heading">Aksi</th>
-    </tr>
-        <?php foreach ($result as $row) : ?>
-      <tr>
-        <td><?=$row["id"];?></td>
-        <td><img src="img/<?= $row["foto"]; ?>" width="50"></td>
-        <td><?= $row["nama"]; ?></td>
-        <td><?= $row["NIDN"]; ?></td>
-        <td><?= $row["email"]; ?></td>
-        <td><?= $row["prodi"]; ?></td>
-        <td>
-          <div style="display: flex; gap: 5px; justify-content: center; align-items: center;">
-            <a href="ubah.php?id= <?= $row['id'];?>" class="ubah">ubah</a> |
-            <a href="delete.php?id= <?= $row['id'];?>" onclick="return confirm('yakin menghapus data?')" class="hapus">hapus</a>
-            </div>
-          </td>
-      </tr>
-    <?php endforeach; ?>
 
-  </table>
+  <div id="container-table">
+    <table border="1" cellpadding="10" cellspacing="0" >
+      <tr>
+        <th class="table-heading">No.</th>
+        <th class="table-heading">Foto</th>
+        <th class="table-heading">Nama</th>
+        <th class="table-heading">NIDN</th>
+        <th class="table-heading">Email</th>
+        <th class="table-heading">Prodi</th>
+        <th class="table-heading">Aksi</th>
+      </tr>
+          <?php foreach ($result as $row) : ?>
+        <tr>
+          <td><?=$row["id"];?></td>
+          <td><img src="img/<?= $row["foto"]; ?>" width="50"></td>
+          <td><?= $row["nama"]; ?></td>
+          <td><?= $row["NIDN"]; ?></td>
+          <td><?= $row["email"]; ?></td>
+          <td><?= $row["prodi"]; ?></td>
+          <td>
+            <div style="display: flex; gap: 5px; justify-content: center; align-items: center;">
+              <a href="ubah.php?id= <?= $row['id'];?>" class="ubah">ubah</a> |
+              <a href="delete.php?id= <?= $row['id'];?>" onclick="return confirm('yakin menghapus data?')" class="hapus">hapus</a>
+              </div>
+            </td>
+        </tr>
+      <?php endforeach; ?>
+    </table>
+  </div>
+
   <div class="pagination">
      <ul class="custom-pagination">
     <li>
@@ -110,5 +113,24 @@ if (isset($_POST["cari"])) {
               <a class="button-logout" href="logout.php">Logout</a>
               </div>
             </div>
+            
+<script>
+  let keyword = document.getElementById('keyword');
+  let btnSearch =  document.getElementById('btn-search');
+  let container =  document.getElementById('container-table');
+
+  keyword.addEventListener('keyup',function()
+  {
+      let ajax = new XMLHttpRequest();
+
+      ajax.onreadystatechange = function(){
+        if (ajax.readyState == 4 && ajax.status == 200)  {
+          container.innerHTML = ajax.responseText;
+        }
+      }
+      ajax.open('GET','ajax/dosen.php?keyword=' + keyword.value,true);
+      ajax.send();
+  });
+</script>
 </body>
 </html>
