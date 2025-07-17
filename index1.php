@@ -52,6 +52,7 @@ if (isset($_POST["cari"])) {
       <input type="text" name="keyword" id="keyword" size="50" placeholder="Masukan Kata Kunci" class="form-custom" autocomplete="off">
       <button type="submit" name="cari" id="btn-search" class="regist-button">Cari</button>
       </div>
+      <a href="cetak-data.php" class="regist-button" name="dw-file">Unduh Laporan</a>
       <a href="tambah.php" class="regist-button">Tambah data dosen</a>
   </div>
   </form>
@@ -113,7 +114,11 @@ if (isset($_POST["cari"])) {
               <a class="button-logout" href="logout.php">Logout</a>
               </div>
             </div>
-            
+            <style>
+
+            </style>
+     
+
 <script>
   let keyword = document.getElementById('keyword');
   let btnSearch =  document.getElementById('btn-search');
