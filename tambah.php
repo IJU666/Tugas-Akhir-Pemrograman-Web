@@ -1,5 +1,11 @@
 <?php
     require"function.php";
+
+    session_start();
+    if (!isset($_SESSION["login"])) {
+    header("Location: login.php");
+    exit;
+    }
     
     if (isset($_POST["submit"])) {
         var_dump($_POST);
@@ -71,7 +77,7 @@
     
     
                 <div class="box-img">
-                    <img src="img/<?= $dsn['foto']; ?>" class="img-thumbnail">
+                    <img src="img/<?= $_POST['foto']; ?>" class="img-thumbnail">
                     <label class="btn-submit ">
                     Tambah Foto
                     <input type="file" name="foto" hidden>

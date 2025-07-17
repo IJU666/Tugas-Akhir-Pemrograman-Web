@@ -1,8 +1,15 @@
 <?php
     require"function.php";
     
+    session_start();
+    if (!isset($_SESSION["login"])) {
+    header("Location: login.php");
+    exit;
+    }
+
     $id = $_GET["id"];
     $dsn = query("SELECT * FROM dosen WHERE id = $id" )[0];
+
 
 
 if (isset($_POST["submit"])) {
@@ -68,7 +75,7 @@ if (isset($_POST["submit"])) {
     
     
                 <div class="box-img">
-                    <img src="img/<?= $dsn['foto']; ?>" class="img-thumbnail">
+                    <img src="img/<?= $_POST['foto']; ?>" class="img-thumbnail">
                     <label class="btn-submit ">
                     Ubah Foto
                     <input type="file" name="foto" hidden>
