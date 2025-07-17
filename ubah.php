@@ -75,10 +75,10 @@ if (isset($_POST["submit"])) {
     
     
                 <div class="box-img">
-                    <img src="img/<?= $_POST['foto']; ?>" class="img-thumbnail">
+                    <img src="img/<?= $dsn['foto']; ?>" class="img-thumbnail">
                     <label class="btn-submit ">
                     Ubah Foto
-                    <input type="file" name="foto" hidden>
+                    <input type="file" name="foto" hidden class="btn-submit ">
                 </div>
             </div>
         </form>

@@ -77,10 +77,9 @@
     
     
                 <div class="box-img">
-                    <img src="img/<?= $_POST['foto']; ?>" class="img-thumbnail">
-                    <label class="btn-submit ">
-                    Tambah Foto
-                    <input type="file" name="foto" hidden>
+                    <img src="img/<?= $dsn['foto']; ?>" class="img-thumbnail">
+                    <label class="btn-file ">
+                    <input type="file" name="foto">
                 </div>
             </div>
         </form>
