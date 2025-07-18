@@ -201,6 +201,8 @@ a {
 
     /* Tambah dan Ubah end */
 
+    /* start index */
+
       table {
     width: 100%;
     border-collapse: collapse;
@@ -284,7 +286,7 @@ a {
   gap: 10px;
   justify-content: flex-end;
 }
-
+/* end index */
 .custom-pagination {
   list-style: none;
   display: flex;
