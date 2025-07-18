@@ -50,7 +50,7 @@ if (isset($_POST["cari"])) {
     <div class="form-position">
       <div class="form-search">
       <input type="text" name="keyword" id="keyword" size="50" placeholder="Masukan Kata Kunci" class="form-custom" autocomplete="off">
-      <button type="submit" name="cari" id="btn-search" class="regist-button">Cari</button>
+      <!-- <button type="submit" name="cari" id="btn-search" class="regist-button">Cari</button> -->
       </div>
       <div class="section-button">
       <a href="cetak-data.php" class="regist-button" name="dw-file">Unduh Laporan</a>
